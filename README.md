@@ -55,42 +55,74 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+1.Create module encoder and decoder.
 
+2.Get inputs and outputs for encoders and decoders.
 
+3.Perform or operation for encoder and and logic for decoders.
 
-### PROGRAM 
-/*
+4.Perform RTL LOGIC and get waveform.
+
+# PROGRAM:
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Rajesh A
+RegisterNumber: 22008551
+```
+```
+module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+# RTL LOGIC
+![image](https://user-images.githubusercontent.com/118924713/214905001-306b3877-0928-4b8d-8e07-cd4990953565.png)
 
 
+# TIMING DIGRAMS
+
+![image](https://user-images.githubusercontent.com/118924713/214905045-5caaf30c-0f8d-45d5-9981-758a20f63dfa.png)
+
+# TRUTH TABLE
+![image](https://user-images.githubusercontent.com/118924713/214905139-319910d5-26cc-47c7-b270-2de52dc287f1.png)
 
 
+# PROGRAM(DECODER):
+```
+Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: Rajesh A
+RegisterNumber:  22008551
+```
+```
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+
+endmodule 
+```
+# RTL LOGIC:
+
+![image](https://user-images.githubusercontent.com/118924713/214905172-896a6a05-3b39-4bd4-acb0-c7379dc80faf.png)
 
 
-### RTL LOGIC  
+# TIMING DIAGRAM:
 
+![image](https://user-images.githubusercontent.com/118924713/214905329-2c428112-5d80-4894-acf7-191330c6b89d.png)
 
+# TRUTH TABLE:
 
+![image](https://user-images.githubusercontent.com/118924713/214905400-9a49b2e8-76b2-4cfc-ade4-e8490df25908.png)
 
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+# RESULTS
+Thus the program to desing encoder and decoder is done.
